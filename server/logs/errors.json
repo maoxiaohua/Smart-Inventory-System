@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1755150593196_u9d1rr29r",
+    "type": "javascript",
+    "message": "Slow page load: 7862ms",
+    "stack": "recordPageLoadMetrics@http://localhost:3000/static/js/bundle.js:277158:78\n./src/utils/performanceMonitor.ts/setupPageLoadMonitoring/</<@http://localhost:3000/static/js/bundle.js:277117:16\n",
+    "url": "http://localhost:3000/",
+    "line": 0,
+    "column": 0,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0",
+    "timestamp": 1755150593196,
+    "sessionId": "session_1755150592774_4ndxw0xwb",
+    "severity": "medium",
+    "context": {
+      "metrics": {
+        "url": "http://localhost:3000/",
+        "loadTime": 7862,
+        "domContentLoaded": 7861,
+        "firstContentfulPaint": 8045,
+        "largestContentfulPaint": 0,
+        "timestamp": 1755150593195
+      },
+      "type": "performance_warning"
+    },
+    "serverTimestamp": "2025-08-14T05:50:23.010Z",
+    "processed": false
+  },
+  {
+    "id": "1755151101943_69zjskopa",
+    "type": "javascript",
+    "message": "menu is not defined",
+    "stack": "UserMenu@http://localhost:3000/main.7cbd4ae53860a993a6c9.hot-update.js:147:7\nreact_stack_bottom_frame@http://localhost:3000/static/js/bundle.js:233290:18\nrenderWithHooks@http://localhost:3000/static/js/bundle.js:223500:38\nupdateFunctionComponent@http://localhost:3000/static/js/bundle.js:225193:17\nbeginWork@http://localhost:3000/static/js/bundle.js:225779:16\nrunWithFiberInDEV@http://localhost:3000/static/js/bundle.js:221271:125\nperformUnitOfWork@http://localhost:3000/static/js/bundle.js:227852:93\nworkLoopSync@http://localhost:3000/static/js/bundle.js:227745:55\nrenderRootSync@http://localhost:3000/static/js/bundle.js:227729:7\nperformWorkOnRoot@http://localhost:3000/static/js/bundle.js:227493:42\nperformSyncWorkOnRoot@http://localhost:3000/static/js/bundle.js:228457:22\nflushSyncWorkAcrossRoots_impl@http://localhost:3000/static/js/bundle.js:228376:306\nflushSyncWork$1@http://localhost:3000/static/js/bundle.js:227607:82\nscheduleRefresh@http://localhost:3000/static/js/bundle.js:220239:7\n./node_modules/react-refresh/cjs/react-refresh-runtime.development.js/performReactRefresh/<@http://localhost:3000/static/js/bundle.js:234583:21\nperformReactRefresh@http://localhost:3000/static/js/bundle.js:234575:30\n./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js/createDebounceUpdate/enqueueUpdate/refreshTimeout<@http://localhost:3000/static/js/bundle.js:12921:17\n",
+    "url": "http://localhost:3000/",
+    "line": 0,
+    "column": 0,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0",
+    "timestamp": 1755151101943,
+    "sessionId": "session_1755150981638_m2plum02s",
+    "severity": "high",
+    "context": {
+      "componentStack": "\nUserMenu@http://localhost:3000/main.7cbd4ae53860a993a6c9.hot-update.js:53:70\ndiv@unknown:0:0\nItem@http://localhost:3000/static/js/bundle.js:51661:14\ndiv@unknown:0:0\n./node_modules/antd/es/space/index.js/InternalSpace<@http://localhost:3000/static/js/bundle.js:51760:83\ndiv@unknown:0:0\ndiv@unknown:0:0\nheader@unknown:0:0\n./node_modules/antd/es/layout/layout.js/Basic<@http://localhost:3000/static/js/bundle.js:38621:9\nHeader@unknown:0:0\ndiv@unknown:0:0\n./node_modules/antd/es/layout/layout.js/BasicLayout<@http://localhost:3000/static/js/bundle.js:38637:42\nLayout@unknown:0:0\nErrorBoundary@http://localhost:3000/static/js/bundle.js:265803:5\nProtectedRoute@http://localhost:3000/static/js/bundle.js:268364:24\nMainApp@http://localhost:3000/static/js/bundle.js:261446:92\nAuthProvider@http://localhost:3000/static/js/bundle.js:276230:22\nApp@unknown:0:0",
+      "errorBoundary": true,
+      "url": "http://localhost:3000/"
+    },
+    "serverTimestamp": "2025-08-14T05:58:25.814Z",
+    "processed": false
+  },
+  {
+    "id": "1755237187108_k6bi0w3l7",
+    "type": "javascript",
+    "message": "Slow page load: 11897ms",
+    "stack": "recordPageLoadMetrics@http://localhost:3000/static/js/bundle.js:277312:78\n./src/utils/performanceMonitor.ts/setupPageLoadMonitoring/</<@http://localhost:3000/static/js/bundle.js:277271:16\n",
+    "url": "http://localhost:3000/",
+    "line": 0,
+    "column": 0,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0",
+    "timestamp": 1755237187109,
+    "sessionId": "session_1755237185674_3x5z755te",
+    "severity": "medium",
+    "context": {
+      "metrics": {
+        "url": "http://localhost:3000/",
+        "loadTime": 11897,
+        "domContentLoaded": 11894,
+        "firstContentfulPaint": 0,
+        "largestContentfulPaint": 0,
+        "timestamp": 1755237187108
+      },
+      "type": "performance_warning"
+    },
+    "serverTimestamp": "2025-08-15T05:53:37.002Z",
+    "processed": false
+  }
+]
