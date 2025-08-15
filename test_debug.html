@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .section { margin-bottom: 30px; padding: 20px; border: 1px solid #ccc; }
+        button { padding: 10px 20px; margin: 10px; }
+        .log { background: #f5f5f5; padding: 10px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>应用程序调试页面</h1>
+    
+    <div class="section">
+        <h2>测试登录API</h2>
+        <button onclick="testLogin()">测试Admin登录</button>
+        <div id="loginResult" class="log"></div>
+    </div>
+    
+    <div class="section">
+        <h2>检查LocalStorage</h2>
+        <button onclick="checkStorage()">检查存储</button>
+        <button onclick="clearStorage()">清除存储</button>
+        <div id="storageResult" class="log"></div>
+    </div>
+    
+    <div class="section">
+        <h2>快速操作</h2>
+        <a href="http://localhost:3000" target="_blank">打开主应用</a><br><br>
+        <button onclick="openDevTools()">提示：打开开发者工具查看控制台</button>
+    </div>
+
+    <script>
+        async function testLogin() {
+            const resultDiv = document.getElementById('loginResult');
+            resultDiv.innerHTML = '正在测试登录...';
+            
+            try {
+                const response = await fetch('http://localhost:3001/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: 'admin',
+                        password: 'admin123'
+                    })
+                });
+                
+                const data = await response.json();
+                resultDiv.innerHTML = `
+                    <strong>登录测试结果:</strong><br>
+                    状态: ${response.status}<br>
+                    成功: ${data.success}<br>
+                    用户: ${data.user ? data.user.username : 'N/A'}<br>
+                    角色: ${data.user ? data.user.role : 'N/A'}<br>
+                    状态: ${data.user ? data.user.status : 'N/A'}<br>
+                    Token: ${data.token ? '已获取' : '未获取'}<br>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `<strong>错误:</strong> ${error.message}`;
+            }
+        }
+        
+        function checkStorage() {
+            const resultDiv = document.getElementById('storageResult');
+            const token = localStorage.getItem('token');
+            const user = localStorage.getItem('user');
+            
+            resultDiv.innerHTML = `
+                <strong>LocalStorage 内容:</strong><br>
+                Token: ${token ? '存在' : '不存在'}<br>
+                User: ${user ? '存在' : '不存在'}<br>
+                ${user ? `用户数据: <pre>${user}</pre>` : ''}
+            `;
+        }
+        
+        function clearStorage() {
+            localStorage.clear();
+            document.getElementById('storageResult').innerHTML = '<strong>✅ LocalStorage已清除</strong>';
+        }
+        
+        function openDevTools() {
+            alert('请按 F12 或右键选择"检查"来打开开发者工具，查看控制台输出');
+        }
+        
+        // 页面加载时自动检查存储
+        window.onload = function() {
+            checkStorage();
+        }
+    </script>
+</body>
+</html>

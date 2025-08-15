@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>清除localStorage</title>
+</head>
+<body>
+    <h1>清除localStorage工具</h1>
+    <button onclick="clearStorage()">清除localStorage</button>
+    <div id="result"></div>
+
+    <script>
+        function clearStorage() {
+            // 清除所有localStorage数据
+            localStorage.clear();
+            
+            // 显示结果
+            document.getElementById('result').innerHTML = 
+                '<p style="color: green;">localStorage已清除完毕！</p>' +
+                '<p>现在可以重新访问 <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> 进行登录测试。</p>';
+        }
+
+        // 显示当前localStorage内容
+        window.onload = function() {
+            const keys = Object.keys(localStorage);
+            if (keys.length === 0) {
+                document.getElementById('result').innerHTML = '<p>localStorage当前为空</p>';
+            } else {
+                let content = '<h3>当前localStorage内容:</h3><ul>';
+                keys.forEach(key => {
+                    content += `<li><strong>${key}:</strong> ${localStorage.getItem(key).substring(0, 100)}...</li>`;
+                });
+                content += '</ul>';
+                document.getElementById('result').innerHTML = content;
+            }
+        }
+    </script>
+</body>
+</html>
