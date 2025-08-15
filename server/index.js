@@ -21,11 +21,12 @@ if (process.env.NODE_ENV === 'production') {
 
 const upload = multer({ dest: 'uploads/' });
 
-const db = new sqlite3.Database('./database/business_data.db', (err) => {
+const dbPath = path.join(__dirname, '../database/business_data.db');
+const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error('数据库连接失败:', err.message);
   } else {
-    console.log('已连接到SQLite数据库');
+    console.log('已连接到SQLite数据库:', dbPath);
     initDatabase();
   }
 });
