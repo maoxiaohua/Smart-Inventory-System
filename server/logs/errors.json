@@ -70,5 +70,31 @@
     },
     "serverTimestamp": "2025-08-15T05:53:37.002Z",
     "processed": false
+  },
+  {
+    "id": "1755509134203_lztdu8or4",
+    "type": "javascript",
+    "message": "Slow page load: 12992ms",
+    "stack": "recordPageLoadMetrics@http://localhost:3000/static/js/bundle.js:341877:78\n./src/utils/performanceMonitor.ts/setupPageLoadMonitoring/</<@http://localhost:3000/static/js/bundle.js:341836:16\n",
+    "url": "http://localhost:3000/",
+    "line": 0,
+    "column": 0,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0",
+    "timestamp": 1755509134203,
+    "sessionId": "session_1755509133530_jbysy1nm2",
+    "severity": "medium",
+    "context": {
+      "metrics": {
+        "url": "http://localhost:3000/",
+        "loadTime": 12992,
+        "domContentLoaded": 12961,
+        "firstContentfulPaint": 13258,
+        "largestContentfulPaint": 0,
+        "timestamp": 1755509134203
+      },
+      "type": "performance_warning"
+    },
+    "serverTimestamp": "2025-08-18T09:26:03.617Z",
+    "processed": false
   }
 ]

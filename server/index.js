@@ -6,6 +6,8 @@ const multer = require('multer');
 const DataImportExport = require('./utils/dataImportExport');
 const errorHandler = require('./errorHandler');
 const authRoutes = require('./routes/auth');
+const shippingRoutes = require('./routes/shipping');
+const receivingRoutes = require('./routes/receiving');
 const { authenticateToken } = require('./middleware/auth');
 const { MIGRATION_SCRIPTS } = require('./config/database');
 
@@ -216,6 +218,10 @@ function createSampleData() {
 
 // 认证路由
 app.use('/api/auth', authRoutes);
+
+// 出货收货路由
+app.use('/api/shipping', shippingRoutes);
+app.use('/api/receiving', receivingRoutes);
 
 // 公开路由（不需要认证）
 app.get('/api/dashboard/overview', (req, res) => {
