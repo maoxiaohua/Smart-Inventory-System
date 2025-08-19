@@ -234,7 +234,7 @@ A: 默认账户 admin/admin123，首次登录后请及时修改
 
 ## 📞 联系我们
 
-- 📧 邮箱: support@ai-business.com
+- 📧 邮箱: mxh0510@163.com
 - 🐛 问题反馈: [GitHub Issues](https://github.com/your-username/ai-business-analytics/issues)
 - 📖 文档: [项目文档](https://docs.ai-business.com)
 
